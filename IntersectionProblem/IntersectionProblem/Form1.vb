@@ -25,9 +25,45 @@ Public Class Form1
         C = CDbl(Cst)
         D = CDbl(Dst)
 
-        ' Please write your code here...
 
-        txtResult.Text = "Not implemented yet"
+
+        Dim result As String
+        ' Please write your code here...
+        If (B < C) Or (D < A) Then
+            result = "no intersection"
+        Else
+            result = "There is intersection"
+            Dim begpoint As Double
+            begpoint = Math.Max(A, C)
+
+            Dim endpoint As Double
+            endpoint = Math.Min(B, D)
+
+            MessageBox.Show("There is intersection at   " & CStr(begpoint) & "   and   " & CStr(endpoint))
+
+
+        End If
+      
+        txtResult.Text = findintersection(A, B, C, D)
     End Sub
 
+    Function findintersection(A As Double, b As Double, c As Double, d As Double) As String
+
+        Dim result As String
+
+        ' Please write your code here...
+        If (b < c) Or (d < A) Then
+            result = "no intersection"
+        Else
+
+            Dim begpoint As Double
+            begpoint = Math.Max(A, c)
+
+            Dim endpoint As Double
+            endpoint = Math.Min(b, d)
+            result = "There is intersection from " & CStr(begpoint) & " to " & CStr(endpoint)
+        End If
+
+        Return result
+    End Function
 End Class
